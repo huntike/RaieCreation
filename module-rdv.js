@@ -30,8 +30,19 @@ var listallrdv = function (callback) {
         });
     });
 }
+var deleterdv = function (rdvid, callback) {
+    pool.getConnection(function (err, connection) {
+        if (err) throw err;
+        
+        connection.query('DELETE FROM rdv WHERE id = ?', rdvid, (err, results, fields) => {
+            connection.release();
+            callback(err, results, fields);
+        });
+    })
+}
 
 
 
 exports.addrdv = addrdv;
+exports.deleterdv = deleterdv;
 exports.listallrdv = listallrdv;

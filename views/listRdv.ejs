@@ -1,3 +1,4 @@
+  <!-- INCLUDE NON FONCTIONNEL -->
 <% include('./partials/head') %>
 <!doctype html>
 <html lang="en">
@@ -40,6 +41,7 @@
           <th scope="col">Nom</th>
           <th scope="col">Prenom</th>
           <th scope="col">Date</th>
+          <th scope="col"></th>
 
 
         </tr>
@@ -51,6 +53,7 @@
           <td><%= rdv.firstname %></td>
           <td><%= rdv.name %></td>
           <td><%= rdv.date_appointment %></td>
+          <td><a href="/delete/<%= rdv.id %>" class="btn btn-danger">Supprimer</a></td>
 
         </tr>
         <% }); %>
@@ -71,5 +74,5 @@
 </body>
 
 </html>
-
+  <!-- INCLUDE NON FONCTIONNEL -->
 <% include ('./partials/footer') %>
